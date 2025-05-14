@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+    .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .backdrop-blur-xl {
+        backdrop-filter: blur(24px);
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .text-shadow-lg {
+        text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+/* Tailwind 配置 */
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#6366F1', // 主色调：靛蓝色
+                secondary: '#EC4899', // 辅助色：粉色
+                accent: '#8B5CF6', // 强调色：紫色
+                dark: '#1F2937', // 深色
+            },
+            fontFamily: {
+                inter: ['Inter', 'sans-serif'],
+            },
+            animation: {
+                'float': 'float 3s ease-in-out infinite',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                }
+            }
+        },
+    }
+}
